@@ -9,7 +9,7 @@ class Article(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 class Comment(models.Model):
-    title = models.TextField()
+    title = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     # article field for 1:N relationship

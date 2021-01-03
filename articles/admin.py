@@ -1,5 +1,9 @@
 from django.contrib import admin
 from .models import Article, Comment
 # Register your models here.
-admin.site.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    fields = ('title', 'content', 'user')
+    empty_value_display = '-empty-'
+
+admin.site.register(Article, ArticleAdmin)
 admin.site.register(Comment)

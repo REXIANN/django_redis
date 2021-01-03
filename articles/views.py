@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Article, Comment
 
 # Create your views here.
 def index(request):
-    pass
+    articles = Article.objects.order_by('-pk')
+    context = {
+        'articles': articles
+    }
+    return render(request, 'articles/index.html', context)

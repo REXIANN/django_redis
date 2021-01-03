@@ -3,5 +3,11 @@
 {% block body %}
 
   <h1>welcome</h1>
-  
+  <div>
+    <h2>your articles here..</h2>
+    {% for article in articles %}
+      <div>article : {{ article }}</div>
+    {% endfor %}
+  </div>
+
 {% endblock body %}

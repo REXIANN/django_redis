@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:django_redis}/db.sqlite3",
+      "name": "django_redis_db"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

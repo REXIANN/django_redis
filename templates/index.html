@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block body %}
-  <h1>welcome</h1>
+  <h1>welcome to Django-Redis</h1>
   <div>
+    <section>
+      <h2>wanna write one?</h2>
+      <a class="btn btn-primary" href="{% url 'articles:create' %}">Write an article</a>
+    </section>
     <h2>your articles here..</h2>
-    {% for article in articles %}
-    
+    {% for article in articles %} 
     <ul>
       <li>title: {{ article.title }}</li>
       <li>content: {{ article.content }}</li>

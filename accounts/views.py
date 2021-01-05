@@ -8,13 +8,13 @@ from .forms import CustomUserCreationForm
 # Create your views here.
 def login(request):
     if request.user.is_authenticated:
-        return redirect('articles:index')
+        return redirect('/')
 
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             user_login(request, form.get_user())
-            return redirect('articles:index')
+            return redirect('/')
     else:
         form = AuthenticationForm()
     
@@ -24,14 +24,14 @@ def login(request):
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect('articles:index')
+        return redirect('/')
 
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             user_login(request, user)
-            return redirect('articles:index')
+            return redirect('/')
     else:
         form = CustomUserCreationForm()
     
@@ -42,4 +42,4 @@ def signup(request):
 @login_required
 def logout(request):    
     user_logout(request)
-    return redirect('articles:index')
+    return redirect('/')

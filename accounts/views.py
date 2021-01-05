@@ -17,9 +17,8 @@ def login(request):
             return redirect('articles:index')
     else:
         form = AuthenticationForm()
-    context = {
-        'form': form
-    }
+    
+    context = { 'form': form }
     return render(request, 'accounts/form.html', context)
 
 
@@ -36,9 +35,7 @@ def signup(request):
     else:
         form = CustomUserCreationForm()
     
-    context = {
-        'form': form
-    }
+    context = { 'form': form }
     return render(request, 'accounts/form.html', context)
 
 

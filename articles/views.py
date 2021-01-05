@@ -4,7 +4,5 @@ from .models import Article, Comment
 # Create your views here.
 def index(request):
     articles = Article.objects.order_by('-pk')
-    context = {
-        'articles': articles
-    }
-    return render(request, 'articles/index.html', context)
+    
+    return render(request, 'articles/index.html')

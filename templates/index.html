@@ -10,7 +10,10 @@
     <h2>your articles here..</h2>
     {% for article in articles %} 
     <ul>
-      <li>title: {{ article.title }}</li>
+      <li>
+        <a href="{% url 'articles:detail' article.pk %}">
+          title: {{ article.title }}</li>
+        </a>
       <li>content: {{ article.content }}</li>
       <li>user: {{ article.user }} </li>
       <li>created: {{ article.created_at }}</li>

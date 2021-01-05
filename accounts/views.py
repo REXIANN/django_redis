@@ -44,4 +44,5 @@ def signup(request):
 
 @login_required
 def logout(request):    
-    pass
+    user_logout(request)
+    return redirect('articles:index')

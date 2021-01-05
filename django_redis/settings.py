@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     # install apps
     'articles',
     'accounts',
@@ -127,7 +128,8 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'accounts.User'
 
-# STATICFILES_DIRS = [
-#     STATIC_URL,
-#     '/templates/'
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),    
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

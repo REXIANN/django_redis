@@ -126,3 +126,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+# STATICFILES_DIRS = [
+#     STATIC_URL,
+#     '/templates/'
+# ]

@@ -127,10 +127,26 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# override AUTH_USER_MODEL 
+
 AUTH_USER_MODEL = 'accounts.User'
 
+# set staticfiles directory for .css files 
+ 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),    
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Redis cache setting
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}

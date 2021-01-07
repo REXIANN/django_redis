@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # install apps
-    'django_redis',
     'articles',
     'accounts',
+    
+    # django_redis 
+    'django_redis',
 ]
 
 MIDDLEWARE = [
